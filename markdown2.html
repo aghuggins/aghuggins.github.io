@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
 </head>
 <body>
   <div id="content"></div>
 
   <script>
-    const markdownText = `
-**Current Score and Inning:**
+    const md = window.markdownit();
+    const markdownText = `**Current Score and Inning:**
 Philadelphia Phillies - 4, Pittsburgh Pirates - 0
 Top of the 7th inning
 
@@ -72,8 +72,9 @@ Top of the 7th inning
 * The game is still in progress.
 * **Bold** indicates home runs.
     `;
+
     const contentDiv = document.getElementById('content');
-    contentDiv.innerHTML = marked.parse(markdownText);
+    contentDiv.innerHTML = md.render(markdownText);
   </script>
 </body>
 </html>
