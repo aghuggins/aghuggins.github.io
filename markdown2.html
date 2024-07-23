@@ -1,42 +1,19 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8"/>
-  <title>Marked in the browser</title>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
   <div id="content"></div>
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
   <script>
-    document.getElementById('content').innerHTML =
-      marked.parse(' **Location:** Zelienople, Pennsylvania, USA
-
-**Current Weather**:
-- Temperature: 76.8°F (24.9°C)
-- Feels Like: 78°F (25.5°C)
-- Conditions: Overcast skies
-- Wind: 2.2 mph (3.6 kph) from the North
-- Precipitation: 0 mm (0 in)
-- Humidity: 48%
-- Visibility: 6 miles (10 km)
-- UV Index: 6
-
-**Forecast:**
-- High: 81.6°F (27.5°C)
-- Low: 55.9°F (13.3°C)
-- Mostly sunny skies throughout the day
-- 0% chance of rain
-
-**Astro:**
-- Sunrise: 6:07 AM
-- Sunset: 8:46 PM
-- Moonrise: 9:31 PM
-- Moonset: 5:54 AM
-- Full Moon
-
-**Additional Notes:**
-- Enjoy a pleasant summer day with ample sunshine and comfortable temperatures.
-- UV levels are moderate, so remember to protect your skin.');
+    const markdownText = `
+| Header 1 | Header 2 |
+|---|---|
+| Cell 1 | Cell 2 |
+    `;
+    const contentDiv = document.getElementById('content');
+    contentDiv.innerHTML = marked.parse(markdownText);
   </script>
 </body>
 </html>
