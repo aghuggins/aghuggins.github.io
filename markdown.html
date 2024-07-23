@@ -6,8 +6,11 @@
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
-    <div id="markdown-content"></div>
+    <div id="markdown-content">Loading...</div>
     <script>
+        // Log to console to verify script execution
+        console.log("Script loaded");
+
         // Example markdown content
         var markdownContent = `
 **Current Score and Inning:**
@@ -77,6 +80,7 @@ Top of the 7th inning
 
         // Render the markdown content
         document.getElementById('markdown-content').innerHTML = marked(markdownContent);
+        console.log("Markdown content rendered");
     </script>
 </body>
 </html>
